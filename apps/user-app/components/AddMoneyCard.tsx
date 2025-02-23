@@ -1,7 +1,6 @@
 "use client"
 import { Button } from "@repo/ui/button";
 import { Card } from "@repo/ui/card";
-import { Center } from "@repo/ui/center";
 import { Select } from "@repo/ui/select";
 import { useState } from "react";
 import { TextInput } from "@repo/ui/textinput";
@@ -22,7 +21,7 @@ export const AddMoney = () => {
 
     return <Card title="Add Money">
     <div className="w-full">
-        <TextInput label={"Amount"} placeholder={"Amount"} onChange={(value) => {
+        <TextInput value={amount.toString()} label={"Amount"} placeholder={"Amount"} onChange={(value) => {
             setAmount(Number(value))
         }} />
         <div className="py-4 text-left">
