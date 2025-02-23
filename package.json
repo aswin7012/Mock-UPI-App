@@ -2,14 +2,23 @@
   "name": "my-turborepo",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "db:generate": "cd packages/db && npx prisma generate && cd ../..",
+    "postinstall": "npm run db:generate",
+    "prisma:generate": "cd packages/db && npx prisma generate && cd ../..",
+    "prestart": "npm run prisma:generate",
+    "start": "npm run prisma:generate && cd ./apps/bank-webhook && npm run start",
+    "start-user-app": "npm run prisma:generate && cd ./apps/user-app && npm run start",
+    "studio": "npx prisma studio"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
     "prettier": "^3.5.0",
+    "tailwindcss": "^4.0.8",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },
