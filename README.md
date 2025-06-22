@@ -1,7 +1,7 @@
 - Clone the repo
 
 ```jsx
-git clone https://github.com/aswin7956/Turbrorepo-Project.git
+git clone https://github.com/aswin7012/Mock-UPI-App.git
 ```
 
 - npm install
